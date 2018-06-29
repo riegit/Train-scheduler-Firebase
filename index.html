@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Schedule</title>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme" rel="stylesheet">
+    <!-- bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <script src='https://code.jquery.com/jquery.js'></script>   
+    <!-- moment.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Train Schedule</h1>
+            <h2>Let's escape the hustle and bustle of a city...</h2>
+            <h2> Take a train for a peaceful Destination!</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card boader mb-3" stlye="max-width:18rem;">
+                    <div class="card-header" style="background: lightskyblue">
+                            Current Train Schedule
+                    </div>
+                    <div class="card-title"></div>
+                    <div class="card-body">
+                        <table class="table table-hover table table-sm" id='trainTable'>
+                            <thead>
+                                <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>  
+                                <tr>                               
+                                    <td>Ueno-Tokyo Line</td>
+                                    <td>Ueno</td>
+                                    <td>15</td>
+                                    <td>15:40 pm</td>
+                                    <td>9</td>
+                                </tr>   
+                                <tr>                               
+                                    <td>Chuo Main Line</td>
+                                    <td>Takaozan</td>
+                                    <td>10</td>
+                                    <td>15:55 pm</td>
+                                    <td>24</td>
+                                </tr>    
+                                                    
+                            </tbody>
+                            </table>     
+                    </div>                      
+                </div>                      
+            </div>
+        </div>        
+        <div class="row">
+                 
+            <div class="col-sm-6" id="addtrainbox">
+                <div class="card boader mb-3" stlye="max-width:18rem;">
+                <div class="card-header" style="background: lightskyblue">
+                        Add Train
+                    </div>
+                    <div class="card-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="trainNameInput">Train Name</label>
+                                <input class="form-control" id="trainNameInput" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="destinationInput">Destination</label>
+                                <input class="form-control" id="destinationInput" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstInput">First Train (HH:mm - Military Time)</label>
+                                <input class="form-control" id="firstInput" type="text" placeholder="example  21:10" >
+                            </div>
+                            <div class="form-group">
+                                <label for="frequencyInput">Frequency (minutes)</label>
+                                <input class="form-control" id="frequencyInput" type="number" min="0">
+                            </div>
+                            <button type="submit" class="btn btn-default"id="addTrainBtn">Submit</button>
+                        </form>
+                    </div>
+                </div>          
+            </div>    
+        </div>
+    </div>
+
+    <script type='text/javascript' src='assets/javascript/app.js'></script>
+</body>
+
+</html>
