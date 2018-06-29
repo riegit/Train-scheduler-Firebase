@@ -1,0 +1,32 @@
+body{
+    background: url(../images/snow-railway.jpeg) ;
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'BioRhyme', 'Helvetica', cursive, serif;
+  }
+
+.container{
+  margin-top:20px;
+}
+#trainTable{
+  cursor: pointer;
+}
+.boader{
+  border: solid 2px lightskyblue;
+}
+h2{
+  font-size: 24px;
+  text-align: auto;
+  font-style: italic;
+  color: #353232;
+  font-weight: bolder;
+  
+}
+h1{
+  font-size: 40Px;
+  font-weight: 900;
+}
