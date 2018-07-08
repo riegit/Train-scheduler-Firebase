@@ -24,10 +24,6 @@ database.ref().on("child_added", function(childSnap) {
     $("#trainTable > tbody").append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + next + "</td><td>" + min + "</td></tr>");
 });
 
-database.ref().on("value", function(snapshot) {
-   console.log("is this code needed?")
-
-});
 
 //grabs information from the form
 $("#addTrainBtn").on("click", function() {
@@ -56,20 +52,22 @@ $("#addTrainBtn").on("click", function() {
     }
 
    
-    //subtracts the first train time back a year to ensure it's before current time.
+    //subtracts the first train time back a year to ensure it's before the current time.
     var firstTrainConverted = moment(firstTrain, "hh:mm").subtract("1, years");
     // the time difference between the current time and the first train
     var difference = currentTime.diff(moment(firstTrainConverted), "minutes");
     var remainder = difference % frequency;
-    var minToNext = frequency - remainder;
-    var nextTrain = moment().add(minToNext, "minutes").format("hh:mm a");
+    var minUntilTrain = frequency - remainder;
+    var nextTrain = moment().add(minUntilTrain, "minutes").format("hh:mm a");
+    // next = moment().add(minAway, "minutes").format("hh:mm")
+    
 
     var newTrain = {
         name: trainName,
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency,
-        min: minToNext,
+        min: minUntilTrain,
         next: nextTrain
     }
 
